@@ -1,7 +1,7 @@
 {
   "name": "eslint-config",
-  "version": "2.0.0",
-  "description": "Unified ESLint configuration for Node and React projects",
+  "version": "2.1.0",
+  "description": "Unified ESLint configuration for Node, React and Svelte projects",
   "type": "module",
   "main": "index.js",
   "exports": {
@@ -16,12 +16,16 @@
     "./react": {
       "types": "./react.d.ts",
       "default": "./react.js"
+    },
+    "./svelte": {
+      "types": "./svelte.d.ts",
+      "default": "./svelte.js"
     }
   },
   "scripts": {
     "test": "vitest run",
     "test:watch": "vitest",
-    "lint": "eslint -c node.js node.js && eslint -c react.js react.js"
+    "lint": "eslint -c node.js node.js && eslint -c node.js react.js svelte.js"
   },
   "dependencies": {
     "@eslint-react/eslint-plugin": "^5.8.6",
@@ -29,7 +33,9 @@
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-react-refresh": "^0.5.2",
     "eslint-plugin-simple-import-sort": "^13.0.0",
+    "eslint-plugin-svelte": "^3.12.4",
     "eslint-plugin-unused-imports": "^4.4.1",
+    "globals": "^16.5.0",
     "typescript-eslint": "^8.60.0"
   },
   "devDependencies": {
@@ -38,13 +44,18 @@
     "eslint": "^10.4.0",
     "expect-type": "^1.3.0",
     "react": "^19.2.6",
+    "svelte": "^5.55.2",
     "typescript": "^6.0.3",
     "vitest": "^4.1.7"
   },
   "peerDependencies": {
-    "eslint": ">= 9"
+    "eslint": ">= 9",
+    "svelte": ">= 5"
   },
   "peerDependenciesMeta": {
+    "svelte": {
+      "optional": true
+    },
     "typescript": {
       "optional": true
     }
