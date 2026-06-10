@@ -1,6 +1,6 @@
 {
   "name": "@anarkisti/eslint-config",
-  "version": "1.0.0-rc.1",
+  "version": "1.0.0-rc.2",
   "description": "Unified ESLint configuration for Node, React and Svelte projects",
   "license": "MIT",
   "repository": {
