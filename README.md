@@ -1,4 +1,4 @@
-# eslint-config
+# @anarkisti/eslint-config
 
 Unified ESLint configuration for Node, React and Svelte TypeScript projects.
 
@@ -13,7 +13,7 @@ Unified ESLint configuration for Node, React and Svelte TypeScript projects.
 ## Install
 
 ```bash
-yarn add -D eslint-config@github:eetu/eslint-config eslint typescript typescript-eslint
+yarn add -D @anarkisti/eslint-config eslint typescript typescript-eslint
 ```
 
 ## Usage
@@ -23,9 +23,9 @@ yarn add -D eslint-config@github:eetu/eslint-config eslint typescript typescript
 Create `eslint.config.js`:
 
 ```javascript
-import config from "eslint-config";
+import config from "@anarkisti/eslint-config";
 // or
-import config from "eslint-config/node";
+import config from "@anarkisti/eslint-config/node";
 
 export default config;
 ```
@@ -35,7 +35,7 @@ export default config;
 Create `eslint.config.js`:
 
 ```javascript
-import reactConfig from "eslint-config/react";
+import reactConfig from "@anarkisti/eslint-config/react";
 
 export default reactConfig;
 ```
@@ -48,7 +48,7 @@ your imported `svelte.config.js` so the parser and SvelteKit-aware rules
 `eslint.config.js`:
 
 ```javascript
-import svelte from "eslint-config/svelte";
+import svelte from "@anarkisti/eslint-config/svelte";
 
 import svelteConfig from "./svelte.config.js";
 
@@ -64,7 +64,7 @@ Requires `svelte` (always present in a SvelteKit app) and, for formatting,
 You can extend the configs with your own rules:
 
 ```javascript
-import nodeConfig from "eslint-config/node";
+import nodeConfig from "@anarkisti/eslint-config/node";
 
 export default [
   ...nodeConfig,

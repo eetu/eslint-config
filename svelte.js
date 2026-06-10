@@ -14,7 +14,7 @@ import nodeConfig from "./node.js";
  * (e.g. svelte/no-navigation-without-resolve) and alias resolution work. Usage:
  *
  *   // eslint.config.js
- *   import svelte from "eslint-config/svelte";
+ *   import svelte from "@anarkisti/eslint-config/svelte";
  *   import svelteConfig from "./svelte.config.js";
  *   export default svelte(svelteConfig);
  *
