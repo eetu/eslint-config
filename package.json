@@ -1,7 +1,7 @@
 {
   "name": "@anarkisti/eslint-config",
-  "version": "1.0.0",
-  "description": "Unified ESLint configuration for Node, React and Svelte projects",
+  "version": "1.1.0",
+  "description": "Unified ESLint configuration for Node, React, Svelte and plain web projects",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -18,6 +18,8 @@
     "react.d.ts",
     "svelte.js",
     "svelte.d.ts",
+    "web.js",
+    "web.d.ts",
     "README.md"
   ],
   "exports": {
@@ -36,12 +38,16 @@
     "./svelte": {
       "types": "./svelte.d.ts",
       "default": "./svelte.js"
+    },
+    "./web": {
+      "types": "./web.d.ts",
+      "default": "./web.js"
     }
   },
   "scripts": {
     "test": "vitest run",
     "test:watch": "vitest",
-    "lint": "eslint -c node.js node.js && eslint -c node.js react.js svelte.js",
+    "lint": "eslint -c node.js node.js && eslint -c node.js react.js svelte.js web.js",
     "prepublishOnly": "yarn test && yarn lint && npm pack --dry-run"
   },
   "dependencies": {

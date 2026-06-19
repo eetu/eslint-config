@@ -4,7 +4,8 @@ import type { Linter } from "eslint";
 
 import nodeConfig from "./node.js";
 import reactConfig from "./react.js";
-import defaultConfig, { node, react } from "./index.js";
+import webConfig from "./web.js";
+import defaultConfig, { node, react, web } from "./index.js";
 
 describe("Type definitions", () => {
   it("node config should be an array of Linter.Config", () => {
@@ -13,6 +14,10 @@ describe("Type definitions", () => {
 
   it("react config should be an array of Linter.Config", () => {
     expectTypeOf(reactConfig).toEqualTypeOf<Linter.Config[]>();
+  });
+
+  it("web config should be an array of Linter.Config", () => {
+    expectTypeOf(webConfig).toEqualTypeOf<Linter.Config[]>();
   });
 
   it("default export should be an array of Linter.Config", () => {
@@ -25,6 +30,10 @@ describe("Type definitions", () => {
 
   it("named export 'react' should be an array of Linter.Config", () => {
     expectTypeOf(react).toEqualTypeOf<Linter.Config[]>();
+  });
+
+  it("named export 'web' should be an array of Linter.Config", () => {
+    expectTypeOf(web).toEqualTypeOf<Linter.Config[]>();
   });
 
   it("configs should be assignable to Linter.Config[]", () => {

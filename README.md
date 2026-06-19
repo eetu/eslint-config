@@ -1,12 +1,13 @@
 # @anarkisti/eslint-config
 
-Unified ESLint configuration for Node, React and Svelte TypeScript projects.
+Unified ESLint configuration for Node, React, Svelte and plain web projects.
 
 ## Features
 
 - **Node configuration**: Base TypeScript ESLint setup with import sorting and unused imports detection
 - **React configuration**: Extends Node config with React, React Hooks, and React Refresh support
 - **Svelte configuration**: Extends Node config with Svelte + SvelteKit support (TypeScript-first)
+- **Web configuration**: Extends Node config with browser globals — for plain vanilla JS/TS (canvas, no framework)
 - Modern ESLint flat config format
 - Prettier integration included
 
@@ -59,6 +60,18 @@ Requires `svelte` (always present in a SvelteKit app) and, for formatting,
 `prettier` + `prettier-plugin-svelte`. `typecheck` uses `svelte-check`, not
 `tsc`.
 
+### For plain web projects
+
+Vanilla browser JS/TS with no framework (e.g. a `<canvas>` app). Same as `node`
+plus browser globals, so `window`/`document`/`requestAnimationFrame` don't trip
+`no-undef`. Create `eslint.config.js`:
+
+```javascript
+import webConfig from "@anarkisti/eslint-config/web";
+
+export default webConfig;
+```
+
 ### Custom configuration
 
 You can extend the configs with your own rules:
@@ -93,3 +106,6 @@ export default [
 ### Svelte configuration (includes all Node plugins plus)
 - `eslint-plugin-svelte` - Svelte + SvelteKit rules (recommended + prettier)
 - `typescript-eslint` parser wired into `.svelte` `<script lang="ts">`
+
+### Web configuration (includes all Node plugins plus)
+- `globals` - browser globals (`window`, `document`, etc.) wired into `languageOptions`
